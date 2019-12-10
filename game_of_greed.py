@@ -50,7 +50,7 @@ class Greed():
         total += (1500)
         break
 
-    # Doubles Score
+    # # Doubles Score
 
     for key, value in cnt.items():
       if len(cnt) == 3 and value == 2:
@@ -108,7 +108,7 @@ class Greed():
         else:
           total += (0)
 
-    #Five Score
+    # Five Score
       if key == 5:
         if value == 6:
           total += (five*40)
@@ -120,6 +120,8 @@ class Greed():
           total += (five*10)
         else:
           total += (value*five)
+
+      # Six Score
       if key == 6:
         if value == 6:
           total += (2400)
@@ -136,11 +138,11 @@ class Greed():
 
 
   def play(self, user_response = None):
-    self._print('Welcome to Game of Greed')
+    self._print('Welcome to Game of Greed!')
     response = self._input('Wanna play? ')
 
     if response == 'y' or user_response == 'y':
-        self._print('Great! Check back tomorrow :D')
+        self._print('Great! Check back tomorrow!')
     else:
         self._print('OK. Maybe another time')
 
