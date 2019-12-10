@@ -8,7 +8,7 @@ class Greed():
     self._input = input_func
 
   #Calculate the score
-  def score(self, dice):
+  def score(self, current_dice_roll=(2,2,4,4,6,6)):
     dice = []
     total = sum([])
 
