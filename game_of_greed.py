@@ -7,35 +7,24 @@ class Greed:
         self._print = print_func
         self._input = input_func
 
-    # Calculate the score
-    def score(self, current_dice_roll=(2, 2, 4, 4, 6, 6)):
+    def roll_dice(self):
         dice = []
-        total = sum([])
+        dice.append(random.randint(1, 6))
+        dice.append(random.randint(1, 6))
+        dice.append(random.randint(1, 6))
+        dice.append(random.randint(1, 6))
+        dice.append(random.randint(1, 6))
+        dice.append(random.randint(1, 6))
 
-        print("")
+        return dice
 
-        r1 = random.randint(1, 6)
-        r2 = random.randint(1, 6)
-        r3 = random.randint(1, 6)
-        r4 = random.randint(1, 6)
-        r5 = random.randint(1, 6)
-        r6 = random.randint(1, 6)
-
-        dice.append(r1)
-        dice.append(r2)
-        dice.append(r3)
-        dice.append(r4)
-        dice.append(r5)
-        dice.append(r6)
-
-        print(dice)
-        print("")
-
-        cnt = Counter()
-
-        for num in dice:
-            cnt[num] += 1
-        cnt
+    # Calculate the score
+    def calculate_score(self, dice):
+        total = 0
+        cnt = Counter(dice)
+        # for num in dice:
+        #     cnt[num] += 1
+        # cnt
 
         print(cnt)
         print("")
@@ -56,12 +45,6 @@ class Greed:
             ):
                 total += 1500
                 break
-
-        # # Doubles Score
-
-        for key, value in cnt.items():
-            if len(cnt) == 3 and value == 2:
-                print(1500)
 
             # One Score
             if key == 1:
@@ -140,6 +123,8 @@ class Greed:
                     total += 600
                 else:
                     total += 0
+            
+        return total    
 
         print(total)
 
