@@ -151,5 +151,5 @@ class Game:
 
 
 if __name__ == "__main__":
-    game = Greed()
+    game = Game()
     game.play()
