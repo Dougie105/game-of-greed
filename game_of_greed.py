@@ -2,12 +2,17 @@ import random
 from collections import Counter
 
 
-class Greed:
+class Game:
     def __init__(self, print_func=print, input_func=input):
         self._print = print_func
         self._input = input_func
 
     def roll_dice(self):
+
+        '''
+        Simulates rolling 6 dice and appends those values into the below dice object. 
+        '''
+
         dice = []
         dice.append(random.randint(1, 6))
         dice.append(random.randint(1, 6))
@@ -19,15 +24,13 @@ class Greed:
         return dice
 
     # Calculate the score
-    def calculate_score(self, dice):
+
+    def score_game(self, dice):
+        '''
+        Every possibiblity of scoring has its own instance. Starting with the most rare case to the most common case to avoid any miscalculations.
+        '''
         total = 0
         cnt = Counter(dice)
-        # for num in dice:
-        #     cnt[num] += 1
-        # cnt
-
-        print(cnt)
-        print("")
 
         one = 100
         five = 50
@@ -129,6 +132,11 @@ class Greed:
         print(total)
 
     def play(self, user_response=None):
+
+        '''
+        Prints a prompt in the beginning of terminal and prints greeting accordingly.
+        '''
+        
         self._print("Welcome to Game of Greed!")
         response = self._input("Wanna play? ")
 
