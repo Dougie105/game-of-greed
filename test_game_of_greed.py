@@ -51,178 +51,178 @@ def test_response_yes():
 
 
 def test_none():
-    game = Greed()
-    assert game.score((6, 2, 3, 2, 6, 4)) == 0
+    actual = Greed.calculate_score(Greed(), (6, 2, 3, 2, 6, 4))
+    assert actual == 0
 
 
-"""
 # Testing 1s
 
 def test_one_one():
     game = Greed()
-    assert game.score((1,2,2,3,4,4)) == 100
+    assert game.calculate_score((1,2,2,3,4,4)) == 100
 def test_two_ones():
     game = Greed()
-    assert game.score((1,1,2,3,3,4)) == 200
+    assert game.calculate_score((1,1,2,3,3,4)) == 200
 def test_three_ones():
     game = Greed()
-    assert game.score((1,1,1,2,3,4)) == 1000
+    assert game.calculate_score((1,1,1,2,3,4)) == 1000
 def test_four_ones():
     game = Greed()
-    assert game.score((1,1,1,1,3,4)) == 2000
+    assert game.calculate_score((1,1,1,1,3,4)) == 2000
 def test_five_ones():
     game = Greed()
-    assert game.score((1,1,1,1,1,4)) == 3000
+    assert game.calculate_score((1,1,1,1,1,4)) == 3000
 def test_all_ones():
     game = Greed()
-    assert game.score((1,1,1,1,1,1)) == 4_000
+    assert game.calculate_score((1,1,1,1,1,1)) == 4_000
+
 
 # Testing 2s
 
 def test_one_two():
     game = Greed()
-    assert game.score((2,3,3,4,6,4)) == 0
+    assert game.calculate_score((2,3,3,4,6,4)) == 0
 def test_two_twos():
     game = Greed()
-    assert game.score((2,2,3,4,6,4)) == 0
+    assert game.calculate_score((2,2,3,4,6,4)) == 0
 def test_three_twos():
     game = Greed()
-    assert game.score((2,2,2,4,6,4)) == 200
+    assert game.calculate_score((2,2,2,4,6,4)) == 200
 def test_four_twos():
     game = Greed()
-    assert game.score((2,2,2,2,6,4)) == 400
+    assert game.calculate_score((2,2,2,2,6,4)) == 400
 def test_five_twos():
     game = Greed()
-    assert game.score((2,2,2,2,2,4)) == 600
+    assert game.calculate_score((2,2,2,2,2,4)) == 600
 def test_all_twos():
     game = Greed()
-    assert game.score((2,2,2,2,2,2)) == 800
+    assert game.calculate_score((2,2,2,2,2,2)) == 800
 
 # Testing 3s
 
 def test_one_three():
     game = Greed()
-    assert game.score((2,2,3,4,6,4)) == 0
+    assert game.calculate_score((2,2,3,4,6,4)) == 0
 def test_two_threes():
     game = Greed()
-    assert game.score((2,3,3,4,6,4)) == 0
+    assert game.calculate_score((2,3,3,4,6,4)) == 0
 def test_three_threes():
     game = Greed()
-    assert game.score((3,3,3,2,6,4)) == 300
+    assert game.calculate_score((3,3,3,2,6,4)) == 300
 def test_four_threes():
     game = Greed()
-    assert game.score((3,3,3,3,6,4)) == 600
+    assert game.calculate_score((3,3,3,3,6,4)) == 600
 def test_five_threes():
     game = Greed()
-    assert game.score((3,3,3,3,3,4)) == 900
+    assert game.calculate_score((3,3,3,3,3,4)) == 900
 def test_many_threes():
     game = Greed()
-    assert game.score((3,3,3,3,3,3)) == 1_200
+    assert game.calculate_score((3,3,3,3,3,3)) == 1_200
 
 # Test 4s
 
 def test_one_four():
     game = Greed()
-    assert game.score((2,2,3,3,6,4)) == 0
+    assert game.calculate_score((2,2,3,3,6,4)) == 0
 def test_two_fours():
     game = Greed()
-    assert game.score((2,2,3,6,4,4)) == 0
+    assert game.calculate_score((2,2,3,6,4,4)) == 0
 def test_three_fours():
     game = Greed()
-    assert game.score((2,2,3,4,4,4)) == 400
+    assert game.calculate_score((2,2,3,4,4,4)) == 400
 def test_four_fours():
     game = Greed()
-    assert game.score((2,2,4,4,4,4)) == 800
+    assert game.calculate_score((2,2,4,4,4,4)) == 800
 def test_five_fours():
     game = Greed()
-    assert game.score((2,4,4,4,4,4)) == 1_200
+    assert game.calculate_score((2,4,4,4,4,4)) == 1_200
 def test_many_fours():
     game = Greed()
-    assert game.score((4,4,4,4,4,4)) == 1_600
+    assert game.calculate_score((4,4,4,4,4,4)) == 1_600
 
 # Test 5s
 def test_one_five():
     game = Greed()
-    assert game.score((2,2,3,5,6,4)) == 50
+    assert game.calculate_score((2,2,3,5,6,4)) == 50
 def test_two_fives():
     game = Greed()
-    assert game.score((5,2,5,2,6,4)) == 100
+    assert game.calculate_score((5,2,5,2,6,4)) == 100
 def test_three_fives():
     game = Greed()
-    assert game.score((5,5,5,2,6,4)) == 500
+    assert game.calculate_score((5,5,5,2,6,4)) == 500
 def test_four_fives():
     game = Greed()
-    assert game.score((5,5,5,5,6,4)) == 1_000
+    assert game.calculate_score((5,5,5,5,6,4)) == 1_000
 def test_five_fives():
     game = Greed()
-    assert game.score((5,5,5,5,5,4)) == 1_500
+    assert game.calculate_score((5,5,5,5,5,4)) == 1_500
 def test_many_fives():
     game = Greed()
-    assert game.score((5,5,5,5,5,5)) == 2_000
+    assert game.calculate_score((5,5,5,5,5,5)) == 2_000
 
 # Test 6's
 
 def test_one_six():
     game = Greed()
-    assert game.score((2,2,3,3,6,4)) == 0
+    assert game.calculate_score((2,2,3,3,6,4)) == 0
 def test_two_sixes():
     game = Greed()
-    assert game.score((2,2,3,3,6,6)) == 0
+    assert game.calculate_score((2,2,3,3,6,6)) == 0
 def test_three_sixes():
     game = Greed()
-    assert game.score((6,2,3,6,6,4)) == 600
+    assert game.calculate_score((6,2,3,6,6,4)) == 600
 def test_four_sixes():
     game = Greed()
-    assert game.score((2,2,6,6,6,6)) == 1_200
+    assert game.calculate_score((2,2,6,6,6,6)) == 1_200
 def test_five_sixes():
     game = Greed()
-    assert game.score((2,6,6,6,6,6)) == 1_800
+    assert game.calculate_score((2,6,6,6,6,6)) == 1_800
 def test_many_sixes():
     game = Greed()
-    assert game.score((6,6,6,6,6,6)) == 2_400
+    assert game.calculate_score((6,6,6,6,6,6)) == 2_400
 
-# Straight
+# # Straight
 
-def test_straight():
-    game = Greed()
-    assert game.score((1,2,3,4,5,6)) == 1_500
-def test_reverse_straight():
-    game = Greed()
-    assert game.score((6,5,4,3,2,1)) == 1_500
+# def test_straight():
+#     game = Greed()
+#     assert game.calculate_score((1,2,3,4,5,6)) == 1_500
+# def test_reverse_straight():
+#     game = Greed()
+#     assert game.calculate_score((6,5,4,3,2,1)) == 1_500
 
 
-# Three Pairs
+# # Three Pairs
 
-def test_three_pairs():
-    game = Greed()
-    assert game.score((2,2,4,4,6,6)) == 1_500
+# def test_three_pairs():
+#     game = Greed()
+#     assert game.calculate_score((2,2,4,4,6,6)) == 1_500
 
 # Double Trio
 
 def test_two_trios():
     game = Greed()
-    assert game.score((2,2,2,3,3,3)) == 500
+    assert game.calculate_score((2,2,2,3,3,3)) == 500
 def test_two_mixed_up_trios():
     game = Greed()
-    assert game.score((4,6,4,6,4,6)) == 1000  
+    assert game.calculate_score((4,6,4,6,4,6)) == 1000  
   
 # Added 1s
 
 def test_added_ones():
     game = Greed()
-    assert game.score((3,3,3,4,6,1)) == 400
+    assert game.calculate_score((3,3,3,4,6,1)) == 400
 def test_two_added_ones():
     game = Greed()
-    assert game.score((6,6,4,1,1,6)) == 800
+    assert game.calculate_score((6,6,4,1,1,6)) == 800
 
 # Added 5s
 
 def test_one_leftover_fives():
     game = Greed()
-    assert game.score((3,3,3,4,6,5)) == 350
+    assert game.calculate_score((3,3,3,4,6,5)) == 350
 def test_two_leftover_fives():
     game = Greed()
-    assert game.score((6,5,4,6,5,6)) == 700
+    assert game.calculate_score((6,5,4,6,5,6)) == 700
 
-"""
+
 
