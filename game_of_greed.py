@@ -32,6 +32,10 @@ class Game:
         total = 0
         cnt = Counter(dice)
 
+        '''
+        What the counter is doing is adding the dice to a dictionary where it is then adding up the values of each value. So say you roll 4 2s, the dictionary under the key of 2 will be 4 as a value.
+        '''
+
         one = 100
         five = 50
 
