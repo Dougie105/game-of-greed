@@ -19,5 +19,12 @@ Follow the prompts to play the game!
 ## Functionality/Architecture
 This game is using 'dice rolls', arguements in the form of tuples. The dice rolls are between 1 and 6 individually and there are six dice at the start of the game. An instance of a GameOfGreed is created upon game start (invoking GameOfGreed class object method play()).
 
+
+Application should allow user to set aside dice each roll
+Application should allow “banking” current score or rolling again.
+Application should keep track of total score
+Application should keep track of current round
+
+
 ## Change Log
 Mon Dec 09 2019 20:40 Created Welcome and calculations.

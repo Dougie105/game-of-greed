@@ -1,29 +1,26 @@
 import random
 from collections import Counter
 
+def roll_dice(self):
+
+    '''
+    Simulates rolling 6 dice and appends those values into the below dice object. 
+    '''
+    return tuple(random.randint(1,6) for _ in range(number_of_dice)) 
+    # dice = []
+    # dice.append(random.randint(1, 6))
+    # dice.append(random.randint(1, 6))
+    # dice.append(random.randint(1, 6))
+    # dice.append(random.randint(1, 6))
+    # dice.append(random.randint(1, 6))
+    # dice.append(random.randint(1, 6))
+    # return dice
 
 class Game:
     def __init__(self, print_func=print, input_func=input):
         self._print = print_func
         self._input = input_func
 
-    def roll_dice(self):
-
-        '''
-        Simulates rolling 6 dice and appends those values into the below dice object. 
-        '''
-
-        dice = []
-        dice.append(random.randint(1, 6))
-        dice.append(random.randint(1, 6))
-        dice.append(random.randint(1, 6))
-        dice.append(random.randint(1, 6))
-        dice.append(random.randint(1, 6))
-        dice.append(random.randint(1, 6))
-
-        return dice
-
-    # Calculate the score
 
     def score_game(self, dice):
         '''
@@ -136,6 +133,7 @@ class Game:
         print(total)
 
     def play(self, user_response=None):
+        pockets = []
 
         '''
         Prints a prompt in the beginning of terminal and prints greeting accordingly.
@@ -144,10 +142,20 @@ class Game:
         self._print("Welcome to Game of Greed!")
         response = self._input("Wanna play? ")
 
+        keep = self._input('Would you like to keep any die? ')
+
+
         if response == "y" or user_response == "y":
             self._print("Great! Check back tomorrow!")
+            if keep == 'y' or user_response == 'y':
+                pocket = self._input('Which would you like to keep? ')
+                pockets.append(pockets)
+            else:
+                roll_dice()
         else:
             self._print("OK. Maybe another time")
+
+        print(f'pocket: {pockets}')
 
 
 if __name__ == "__main__":
